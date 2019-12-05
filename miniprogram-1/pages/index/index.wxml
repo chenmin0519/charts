@@ -1,0 +1,204 @@
+<!--index.wxml-->
+<view class="heard-title">
+  <h3>财富体检表</h3>
+</view>
+<!--主容器-->
+<view class="info-container">
+
+  <!--用户信息-->
+  <form bindsubmit="submitData">
+    <view class="base-info">
+      <view class="base-page-body-setting-item">
+        <view class="base-own-info-item">
+          <view class="base-info-name">
+            <text>客户姓名:  </text>
+          </view>
+          <input name="name" class="base-input-text" />
+        </view>
+        <view class="base-own-info-item">
+          <view class="base-info-name">
+            <text>风险等级:  </text>
+          </view>
+          <input name="lv" class="base-input-text" />
+        </view>
+      </view>
+
+       <view class="base-page-body-setting-item">
+        <view class="base-own-info-item">
+          <view class="base-info-name">
+            <text>联系方式:  </text>
+          </view>
+          <input name="mobile" class="base-input-text" />
+        </view>
+        <view class="base-own-info-item">
+          <view class="base-info-name">
+            <text>体检时间:  </text>
+          </view>
+          <input name="lv" class="base-input-text" />
+        </view>
+      </view>
+
+      <view class="page-body-setting-item">
+        <view class="own-info-item">
+          <view class="one-info-name">
+            <text>理财经理姓名:  </text>
+          </view>
+          <view class="info-text">
+            <input name="managerName" class="input-text" />
+          </view>
+        </view>
+      </view>
+
+    </view>
+
+    <view class="page-body-setting">
+     <view class="page-body-setting-item">
+        <view class = "info-title">
+          一、几个简单的问题，定制您的专属财富诊断           
+        </view>
+      </view>
+      <view class="page-body-setting-item">
+        <view class="own-info-item">
+          <view class="body-info-name">
+            <text>1、您每月的家庭开销？</text>
+          </view>
+          <view class="body-info-text"> 
+            <input name="homePay" class="body-input-text" />
+          </view>
+        </view>
+      </view>
+
+      <view class="page-body-setting-item">
+       <view class="own-info-item">
+          <view class="body-info-name">
+            <text>2、您每年的家庭余额？</text>
+          </view>
+          <view class="body-info-text"> 
+            <input name="homeBalance" class="body-input-text" />
+          </view>
+        </view>
+      </view>
+      
+       <view class="page-body-setting-item">
+        <view class="own-info-item">
+          <view class="body-info-name">
+            <text>2、您是否已结婚？</text>
+          </view>
+          <view class="body-info-text"> 
+            <radio-group name="isMarry">
+              <radio value="1" checked="true">是</radio>
+              
+              <radio value="0" class="no">否</radio>
+            </radio-group>
+          </view>
+        </view>
+      </view>
+
+      <view class="page-body-setting-item">
+        <view class="own-info-item">
+          <view class="body-info-name">
+            <text>2、您是否有子女？</text>
+          </view>
+          <view class="body-info-text"> 
+            <radio-group name="haveSoon">
+              <radio value="1" checked="true">是</radio>
+              <radio value="0" class="no">否</radio>
+            </radio-group>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <view class="page-body-setting">
+      <view class="page-body-setting-item">
+        <view class="own-info-item">
+          <view class="info-name">
+            <text>昵称:  </text>
+          </view>
+          <view class="info-text"> 长歌</view>
+        </view>
+      </view>
+
+      <view class="page-body-setting-item">
+        <view class="own-info-item">
+          <view class="info-name">
+            <text>姓名:  </text>
+          </view>
+          <view class="info-text">
+            <input name="name" class="input-text" />
+          </view>
+        </view>
+      </view>
+
+     
+      <view class="page-body-setting-item">
+        <view class="own-info-item">
+          <view class="info-name">性别:</view>
+          <view class="info-text">
+
+            <radio-group name="sex">
+              <radio value="1" checked="true">男</radio>
+              <radio value="0">女</radio>
+            </radio-group>
+          </view>
+        </view>
+      </view>
+
+      <view class="page-body-setting-item">
+        <view class="own-info-item">
+          <view class="info-name"> 地址:</view>
+          <view class="info-text">
+            <input name="address" class="input-text" />
+          </view>
+        </view>
+      </view>
+
+      <view class="page-body-setting-item">
+        <view class="own-info-item">
+          <view class="info-name">号码:</view>
+          <view class="info-text">
+            <input name="phone" class="input-text" maxlength="10" />
+          </view>
+        </view>
+      </view>
+
+      <view class="page-body-setting-item">
+        <view class="own-info-item">
+          <view class="info-name">生日:</view>
+          <view class="info-text">
+            <picker name="birthday" bindchange="bindDateChange" mode="date" value="{{date}}" start="1990-01-01" end="2018-12-31">
+              <view class="picker">
+                {{date}}
+              </view>
+            </picker>
+
+          </view>
+        </view>
+      </view>
+
+      <view class="page-body-setting-item">
+        <view class="own-info-item">
+          <view class="info-name">公司:</view>
+          <view class="info-text">
+            <input name="company" class="input-text" />
+          </view>
+        </view>
+      </view>
+
+      <view class="page-body-setting-item">
+        <view class="own-info-item">
+          <view class="info-name">职位:</view>
+          <view class="info-text">
+            <input name="work" class="input-text" />
+          </view>
+        </view>
+      </view>
+
+      <view>
+        <button class="button" form-type="submit">修改信息</button>
+      </view>
+
+    </view>
+
+  </form>
+</view>
